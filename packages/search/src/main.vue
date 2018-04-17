@@ -1,6 +1,6 @@
 
 <template>
-  <el-form :model="params" :inline="inline" ref="form" @submit.native.prevent="searchHandler()"
+      <el-form :model="params" :inline="inline" ref="form" @submit.native.prevent="searchHandler()"
     :label-width="labelWidth ? (labelWidth + 'px') : ''">
     <el-form-item v-for="(form, index) in forms" :key="index"
       :prop="form.itemType != 'daterange' ? form.prop : (datePrefix + index)"
@@ -60,6 +60,9 @@
         :loading="submitLoading">
         {{ resetBtnText }}
       </el-button>
+    </el-form-item>
+    <el-form-item label="" :style="`float: ${buttons.align||'right'};margin-${buttons.align||'right'}: 10%`">
+        <el-button v-for="(btn, index) in buttons.items" :type="btn.type||'success'" :key="btn.label+index" @click="btn.click">{{btn.label}}</el-button>
     </el-form-item>
   </el-form>
 </template>

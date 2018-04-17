@@ -1,7 +1,6 @@
 
 <template>
   <div>
-
     <search-form
       v-if="formOptions"
       ref="searchForm"
@@ -15,7 +14,9 @@
       :submit-loading="loading"
       :showResetBtn="formOptions.showResetBtn"
       :submitBtnText="formOptions.submitBtnText"
-      :resetBtnText="formOptions.resetBtnText" />
+      :resetBtnText="formOptions.resetBtnText"
+      :buttons="formOptions.buttons"
+    />
 
     <slot name="form" :loading="loading" :search="searchHandler" />
 

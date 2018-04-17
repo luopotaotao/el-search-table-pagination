@@ -87,6 +87,20 @@ submitHandler | function to hander click event of submit button, the will receiv
 | format | a function to foramt form item value, it receive two arguments: form item value and form item key(as prop), and the function should return the formatted value | function | - | - |
 | pickerOptions | additional options, only avaliable for date/daterange | object | - | - |
 
+### Form buttons Attributes
+
+| Attribute | Description | Type | Accepted Values | Default |
+| --- |------|:----:|-----|:-----:|
+| align | position | string | left,right | right |
+| items | buttons info | array | - | - |
+
+### Form buttons items Attributes
+
+| Attribute | Description | Type | Accepted Values | Default |
+| --- |------|:----:|-----|:-----:|
+| label | text of button | string | - | - |
+| click | handler | function | - | - |
+
 ## Methods
 
 | Method Name | Description | Parameters |

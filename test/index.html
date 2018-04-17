@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/vue.js"></script>
+    <link rel="stylesheet" media="all" href="http://unpkg.com/element-ui/lib/theme-chalk/index.css"/>
+
+    <script src="../index.js"></script>
+    <script src="//unpkg.com/element-ui"></script>
+
+</head>
+<body>
+<div id="app"></div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            formOptions: {
+                inline: true,
+                submitBtnText: 'Search',
+                forms: [
+                    {prop: 'name', label: 'Name'},
+                    {prop: 'mobile', label: 'Mobile'},
+                    {
+                        prop: 'sex', label: 'Sex', itemType: 'select',
+                        options: [
+                            {value: '', label: 'All'},
+                            {value: 0, label: 'Male'},
+                            {value: 1, label: 'Female'}
+                        ]
+                    }
+                ],
+                buttons: {
+                    align: 'right',
+                    items: [{
+                        label: '测试',
+                        click: function () {
+                            alert(123)
+                        }
+                    }]
+                }
+            },
+            columns: [
+                {prop: 'name', label: 'Name', width: 140},
+                {prop: 'mobile', label: 'Mobile', minWidth: 180},
+                {
+                    prop: 'sex', label: 'Sex', width: 100,
+                    render: row => {
+                        const {sex} = row
+                        return sex === 0 ? 'Male' : sex === 1 ? 'Female' : 'Unknow'
+                    }
+                }
+            ],
+            tableData: [
+                {name: 'Sam', mobile: '15299xxxx', sex: 0},
+                {name: 'Jean', mobile: '13452xxxx', sex: 1},
+                {name: 'Tony', mobile: '187233xxxx', sex: 0}
+            ]
+        },
+        template: `
+    <el-search-table-pagination
+      type="local"
+      :data="tableData"
+      :page-sizes="[5, 10]"
+      :columns="columns"
+      :form-options="formOptions">
+    </el-search-table-pagination>
+  `
+    })
+
+</script>
+</html>

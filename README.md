@@ -18,6 +18,8 @@ $ npm i --save el-search-table-pagination
 
 See demos of [**Local Data**](https://codepen.io/zollero/pen/wPRqYX) and [**Remote Data**](https://codepen.io/zollero/pen/xPmXBp) on **CodePen**.
 
+or see the demo test/index.html
+
 ## API
 
 [API](./docs/en_US.md)  |  [中文API](./docs/zh_CN.md)
